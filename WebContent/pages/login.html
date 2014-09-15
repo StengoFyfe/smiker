@@ -1,0 +1,56 @@
+﻿<div>
+<form ng-controller="LoginCtrl">
+	<div  class="top_ident_tr" ></div>
+	<table  style="align: center; width: 100%;  vertical-align: middle">
+
+    	<tr > <td> &nbsp; </td></tr>
+		<tr >
+				<td style="width: 10%" ></td>
+				<td style="width: 40%; text-align: left" >
+					<span class="input-item-label"> {{'LBL_USER' | translate}} </span> 	
+				</td>
+				<td style="width: 40%; text-align: left" >
+					<input  type="text" class="input-item" ng-model="loginContext.user"> 
+				</td>
+				<td style="width: 10%"></td>
+		</tr>	    	
+		<tr >
+				<td style="width: 10%" ></td>
+				<td style="width: 40%; text-align: left" >
+					<span class="input-item-label"> {{'LBL_PWD' | translate}} </span> 	
+				</td>
+				<td style="width: 40%; text-align: left" >
+					<input  type="password" class="input-item" ng-model="loginContext.pwd"> 
+				</td>
+				<td style="width: 10%"></td>
+		</tr>		
+		<tr  height="10px"> <td> &nbsp; </td></tr>		
+		<tr>
+				<td style="width: 10%"></td>
+				<td colspan="2" style="width: 70%; text-align: left" ng_controller="ToggleButton">
+					<img ng-mouseover="over(true)" ng-mouseout="over(false)"  ng-focus="over(true)"  ng-blur="over(false)"
+							   ng-click="loginWebService.login(loginContext.getLoginObj(), true);loginService.clearLoginObj();"
+							 ng-src="{{imageButtonUrl}}" >	
+					<span class="{{menuClass}}"> {{'BTN_LOGIN' | translate}} </span> 	
+				<td style="width: 15%"></td>
+		</tr>
+		<tr>				
+				<td style="width: 10%"></td>
+				<td colspan="2" style="width: 70%; text-align: left" ng_controller="ToggleButton">
+					<img ng-mouseover="over(true)" ng-mouseout="over(false)"  ng-focus="over(true)"  ng-blur="over(false)"
+							ng-click="navBack();" ng-src="{{imageButtonUrl}}" >	
+					<span class="{{menuClass}}"> {{'BTN_CANCEL' | translate}} </span> 	
+				
+				</td>
+				<td style="width: 15%"></td>
+				
+		</tr>
+    	<tr  height="10px"> <td> &nbsp; </td></tr>
+				
+	</table>
+</form>
+</div>
+
+<!--  <modal-dialog show='modalShown' width='750px' height='90%'>
+  <p>Modal Content Goes here<p>
+</modal-dialog>  -->

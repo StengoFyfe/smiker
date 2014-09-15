@@ -1,0 +1,61 @@
+﻿	  
+	 <ng-include src="'pages/tablepage.html'"></ng-include>
+	 
+	  <!--  -------------------------------------------------------------------- -->
+	  <!-- Die Aktuelle Standort-Tabelle -->
+	  <!--  -------------------------------------------------------------------- -->
+	  <div  ng-controller="MasterController" class="div-tab-elem" > 
+		  <form class="inner_frame">
+		      <div class="hv_wrap">
+				<div class = "hv_table">
+		  	
+				      <table   class="table"  ng-controller="StandortCtrl" ><!-- ng-controller="StandortListLoader" --> 
+					      <tr class="standort_abt_header_tr">
+					      	<td colspan="2"  class="caption_sel_table">
+					      		<span>{{ 'TBL_HEADER_STANDORTE' | translate }}</span>
+					      	</td>
+					      	<td>
+					      		<input type="image" ng-src="{{masterContext.getImgProv().getImage('DEL_IMAGE')}}" ng-show="selectionContext.getSelStandort() != null" ng-click="selectionContext.setSelStandort(null);" />
+					      		
+					      	</td>
+					      </tr>
+					      <tr class="list_cell" ng-repeat="standort in standorte track by $index" >
+					        <td>{{standort.ID}}</td>
+					        <td>{{standort.NAME}} [{{standort.NUMMER}}]</td>
+					        <td >
+					        			<img class="selection_cell" ng_controller="ToggleButtonGeneric" 
+					    				ng-src="{{imgBtnUrl('images/btnsel', 'gif')}}"
+					    				ng-mouseover="over(true)" ng-mouseout="over(false)"
+					        			ng-click="selectionContext.setSelStandort(standort);">
+					        </td> 
+					      </tr>
+				    </table>
+				  </div>
+				  <div class="hv_filler">&nbsp;</div>
+				  <div class="hv_table">
+
+			    	<table class="table" ng-controller="AbteilungCtrl">
+				      <tr class="standort_abt_header_tr">
+				      	<td colspan="2"  class="caption_sel_table">
+				      		<span>{{'TBL_HEADER_ABTEILUNGEN' | translate}}</span>
+				      	</td>
+				      	<td>
+				      		<input type="image"  ng-src="{{masterContext.getImgProv().getImage('DEL_IMAGE')}}" ng-show="selectionContext.getSelAbteilung() != null" ng-click="selectionContext.setSelAbteilung(null);" />
+				      	</td>
+				      	
+				      </tr>		    	
+				    	<tr ng-show="selectionContext.getSelStandort() != null" class="list_cell" ng-repeat="abteilung in abteilungen | filter:isAbteilungInStandort">
+				    		<td>{{abteilung.ID}}</td>
+				    		<td><input type="image" ng-repeat="arrImg in getTreeItemList(abteilung) track by $imgIndex" ng-src="{{arrImg}}"> &nbsp;{{abteilung.NAME}} [{{abteilung.ABT_NUMMER}}]</td>
+				    		<td>
+								<img class="selection_cell" ng_controller="ToggleButtonGeneric" 
+				    				ng-src="{{imgBtnUrl('images/btnsel', 'gif')}}"
+				    				ng-mouseover="over(true)" ng-mouseout="over(false)"
+				    				ng-click="selectionContext.setSelAbteilung(abteilung);">
+				    		</td>
+				    	</tr>
+			    	</table>
+				</div>
+			</div>
+		  </form>
+	  </div>

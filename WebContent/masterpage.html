@@ -1,0 +1,26 @@
+
+<!-- headerhome value='"SpendTest WebApp in AngularJS"'> </headerhome --> 
+<headerhome value="'SpendTest WebApp in AngularJS'"> </headerhome> 
+   <div ng-controller="SelectionCtrl" name="Subtitle" class="sub_header"  >
+  	<span >
+  		{{masterContext.getCurrShownScreenName()}}
+  	</span>
+  </div>
+   <form name="ErrorPanel" ng-controller="MasterController" ng-show="masterContext.getErrors().length > 0" style="margin: -2px 0 0 0">
+    <table style="width: 100%">
+	  	<tr> 
+		  	<td>
+			  	<table class="error_panel" style="width: 100%; margin: 0 0 0 0; padding: 0;" > 
+			  		<tr ng-repeat="error in masterContext.getLastError() track by $index" >
+			  			<td>
+			  				{{error}}
+			  			</td>
+			  		</tr>
+	  			</table>	  	
+	  		</td>
+		  	<td>
+		  		<a href class="btn btn-default btn-sm" ng-click="masterContext.triggerReload()">Verbinden</a>
+		  	</td>
+		</tr>
+  	</table>
+  </form> 

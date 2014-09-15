@@ -1,0 +1,57 @@
+﻿<html ng-app='SpendTestApp'>
+<head>
+  <meta charset="utf8" />
+  <meta http-equiv="expires" content="0">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >  
+  <title>SpendTest Angular</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
+  <script type="text/javascript"> var translation_language="de-de"</script>  
+  
+
+    </head>  
+<body>
+<div  >
+	
+	 <ng-include src="'masterpage.html'"></ng-include>
+
+ 
+
+
+  <div ng-controller="MasterController" class="view-animate-container" style="width:100%" >
+  <div ng-view ng-class="masterContext.getSweepAnimation()"  data-ng-swipe-left="masterContext.onSwipe(1)" data-ng-swipe-right="masterContext.onSwipe(-1)">
+
+  </div>
+  </div>
+  
+  
+  <div id="load" style="display: none" class="load"><img style="margin-top: 20; vertical-align: middle" src="images/wait.gif"><br>Loading... Please wait</div>
+  
+	
+</div>	
+	
+  <script src="libs/angularjs/1.2.22/angular.js"></script>
+  <script src="libs/angularjs/1.2.22/i18n/angular-translate.js"></script>    
+  <script src="libs/angularjs/1.2.22/i18n/angular-locale_de-de.js"></script>
+  <script src="libs/angularjs/1.2.22/angular-cookies.js"></script>
+  <script src="libs/angularjs/1.2.22/angular-animate.js"></script>
+  <script src="libs/angularjs/1.2.22/angular-route.js"></script>
+  <script src="libs/angularjs/1.2.22/angular-sanitize.js"></script>
+  <script src="libs/angularjs/1.2.22/angular-touch.js"></script>  
+
+  
+  <script src="jquery-1.11.1.min.js"></script>
+  <script src="ui-bootstrap-tpls-0.11.0.min.js"></script>
+  <script src="SimplePagination.js"></script>
+  <script src="app.js"></script>
+  <script src="imageResources.js"></script>  
+  <script src="directives.js"></script>  
+  <script src="configs.js"></script>
+  <script src="factories.js"></script>
+  <script src="LoadServices.js"></script>
+  <script src="controllers.js"></script>
+  <script src="textResources.js"></script>
+  	
+  </body>
+</html>

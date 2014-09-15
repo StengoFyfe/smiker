@@ -1,0 +1,33 @@
+﻿	 <ng-include src="'pages/tablepage.html'"></ng-include>
+	 
+	  <!--  -------------------------------------------------------------------- -->
+	  <!-- Die Aktuelle Materialgruppen-Tabelle -->
+	  <!--  -------------------------------------------------------------------- -->  
+	  <div   ng-controller="MasterController" class="div-tab-elem" > 
+	  <form class="inner_frame">
+				    	<table class="table" ng-controller="MaterialgruppeCtrl" >
+				     		 <tr class="standort_abt_header_tr">
+				      			<td colspan="2"  class="caption_sel_table">
+				      				<span>{{'TBL_HEADER_PRODUCTGROUPS' | translate}}</span>
+				      			</td>
+				      			<td>
+				      				<input type="image"  ng-src="{{masterContext.getImgProv().getImage('DEL_IMAGE')}}" ng-show="selectionContext.getSelMaterialgruppe() != null" ng-click="selectionContext.setSelMaterialgruppe(null);" />
+				      			</td>
+				      	
+				      		</tr>		    	
+				    		<tr ng-repeat="materialgruppe in materialgruppen" class="list_cell">
+				    			
+				    			<td>{{materialgruppe.ID}}</td>
+				    			<td>{{materialgruppe.NAME}} [{{materialgruppe.MAT_CODE}}]</td>
+				    			<td >
+				    				<img ng_controller="ToggleButtonGeneric" class='selection_cell'
+				    				ng-src="{{imgBtnUrl('images/btnsel', 'gif')}}"
+				    				ng-mouseover="over(true)" ng-mouseout="over(false)"
+				    				ng-click="selectionContext.setSelMaterialgruppe(materialgruppe);">
+				    			</td> 
+				    		</tr>
+				    	</table>
+		  </form>
+	  </div>  
+	  
+	  

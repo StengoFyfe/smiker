@@ -1,0 +1,75 @@
+  <!--  -------------------------------------------------------------------- -->
+  <!-- Header Leiste anzeigen												 -->
+  <!--  -------------------------------------------------------------------- -->
+  <div  >
+  <form ng-controller="SelectionCtrl"  ng-show="masterContext.getCurrShownScreen() < 50"  > 
+     <table ng-hide="masterContext.getCurrShownScreen() > 100" style="width: 100%; table-layout: fixed;"> <tr>
+		<td  style="width:10%; text-align: left" ng_controller="ToggleButtonGeneric">
+			<input type="image" class="icon20" ng-src="{{imgBtnUrl('images/play-left', 'png')}}"
+					 ng-mouseover="over(true)" ng-mouseout="over(false)"
+					 ng-show="masterContext.getCurrShownScreen() > 0 && masterContext.getCurrShownScreen() < 1000" 
+						ng-click="masterContext.onSweep(-1);masterContext.setCurrShownScreen( masterContext.getCurrShownScreen() -1);" ><!--   --> 			  		
+		</td>
+		<td style="width: 80%; text-align: center" >
+			<div >
+				<img ng-hide="masterContext.getCurrShownScreen() > 50" class="iconBrowseDot"  ng-src="{{masterContext.getCurrBrowseImage()}}">
+			</div>
+		</td>
+		<td style="width: 10%; text-align: right" ng_controller="ToggleButtonGeneric">
+	  			<input type="image" class="icon20" ng-src="{{imgBtnUrl('images/play-right', 'png')}}" 
+	  			 			ng-mouseover="over(true)" ng-mouseout="over(false)"
+	  						ng-show="masterContext.getCurrShownScreen() < 2" 
+	  						ng-click="masterContext.onSweep(1);masterContext.setCurrShownScreen( masterContext.getCurrShownScreen() + 1);" > 			  		
+	  	</td>
+	  	</tr>
+	  	</table>
+	  	</form>
+	  </div>
+	  <div class="masterstyle_size_height">
+
+  <form ng-controller="SelectionCtrl"  ng-show="masterContext.getCurrShownScreen() < 50" > 
+	  	
+	  	<div style="position: relative; width:auto; min-width: @media( width ); max-width: 1000px">
+	  	<table >
+	  	<tr>
+  
+     <td ng-show="masterContext.getCurrShownScreen() < 50">  
+	  <span ng-show="selectionContext.selectedItemCount() == 0 && masterContext.getCurrShownScreen() < 100" 
+	  			class="selection_header_empty">
+	  	{{'TXT_NO_SELECTION' | translate }}
+	  </span>
+	  <table   ng-show="selectionContext.selectedItemCount() > 0 && masterContext.getCurrShownScreen() < 100" >
+	  	  <tr>
+	  	  	<td class="selection_header">{{'TXT_CURR_SELECTION' | translate}}:</td>
+	  	  	<td>
+			  <table >
+			  	<tr style="text-align: left">
+			  		  <td ng_controller="ToggleButtonGeneric">
+						  <div ng-hide="selectionContext.selectedItemCount() < 4" >
+						  					    		<img 
+						  					    		    ng-src="{{imgBtnUrl('images/btn_go', 'gif')}}"
+						  					    		    ng-mouseover="over(true)" ng-mouseout="over(false)"
+					  										ng-show="masterContext.getCurrShownScreen() <= 2"  ng-click="masterContext.onSweep(0);masterContext.setCurrShownScreen(50);">
+						  </div>
+					  </td>
+
+			  		<td   class="selcontext_td" ng-repeat="displayElement in selectionContext.selElements() track by $index">
+		      			<input type="image" ng-hide="displayElement == null" ng-src="{{displayElement.getImage()}}" />
+		      		
+		      	 		<a class="nobrk" ng-click="masterContext.setCurrShownScreen(displayElement.getIdx());">{{displayElement.getTxt();}} </a> 
+		      			<!-- / -->
+			  		</td>
+			  	</tr>	
+			  </table>
+			</td>
+			</tr>			
+	  </table>
+
+	  </td>
+
+	  </tr></table>
+	  
+	  </div>
+	  
+  </form>
+  </div>

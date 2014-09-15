@@ -1,0 +1,46 @@
+﻿ 
+	  <!-- Die Aktuelle Umsatz-Tabelle -->
+	  <!--  -------------------------------------------------------------------- -->
+	  <div  ng-controller="MasterController" class="div-tab-elem-ums" align="center"  > 
+	  <form class="inner_frame">    
+		<table>
+		  		<tr style="vertical-align: top;">
+				    <td style="vertical-align: top;">
+				    	<table class="table" ng-controller="UmsatzCtrl" data-ng-swipe-left="pagination.nextPage()" data-ng-swipe-right="pagination.prevPage()" >
+				     		 <tr>
+				      			<td colspan="4"  class="caption_sel_table">
+				      				<span>{{ 'TBL_HEADER_UMSATZ' | translate }}</span>
+				      			</td>
+				      		</tr>
+				      		<tr>
+				      			<td colspan="2" style="text-align: left" ng-controller="ToggleButtonGeneric">
+				      				<img ng-mouseover="over(true)" ng-mouseout="over(false)" ng-click="pagination.prevPage()" 
+				      				 ng-hide="pagination.page == 0" ng-click="pagination.prevPage()" ng-src="{{imgBtnUrl('images/play-left', 'png')}}" >
+				      			</td>
+				      			<td colspan="2" style="text-align: right" ng-controller="ToggleButtonGeneric">
+									<img ng-mouseover="over(true)" ng-mouseout="over(false)" ng-click="pagination.nextPage()" 
+									ng-hide="pagination.page + 1 >= pagination.numPages" ng-click="pagination.nextPage()" ng-src="{{imgBtnUrl('images/play-right', 'png')}}" />
+				      			</td>
+				      			
+				      		</tr>		    	
+				    		<tr class="list_cell_umsatz" ng-repeat="umsatzElem in umsatz  | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+				    			
+				    			<td>{{umsatzElem.ID}}</td>
+				    			<td>{{umsatzElem.BUCHUNGSDATUM | date}}</td>
+				    			<td class="money-cell" align="right">{{umsatzElem.BETRAG.toLocaleString() | currency:" "}} €</td>
+				    			<td>{{umsatzElem.UMSATZ_TYP}}</td>
+				    			 
+				    		</tr>
+				    	</table>
+				    </td>
+		    	</tr>
+		    	<tr>
+		    		<td ng-controller="ToggleButton" style="text-align: center">
+		    				<img ng-mouseover="over(true)" ng-mouseout="over(false)" 
+							ng-click="navBack();" ng-src="{{imageButtonUrl}}" >	
+							<span class="{{menuClass}}"> {{'BTN_BACK' | translate}} </span> 	
+		    		</td>
+		    	</tr>
+		    </table> 
+		  </form>
+	  </div>

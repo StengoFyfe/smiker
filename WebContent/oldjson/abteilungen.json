@@ -1,0 +1,29 @@
+﻿[
+	{"ID": "28", "FK_STANDORT": "4", "FK_PARENT": "", "ABT_NUMMER": "_RE", "NAME": "Real Estate", "TREEPOS": "1" },
+	{"ID": "29", "FK_STANDORT": "4", "FK_PARENT": "", "ABT_NUMMER": "_SA", "NAME": "Sales", "TREEPOS": "1" },
+	{"ID": "30", "FK_STANDORT": "4", "FK_PARENT": "", "ABT_NUMMER": "_PA", "NAME": "Production A", "TREEPOS": "1" },
+	{"ID": "31", "FK_STANDORT": "5", "FK_PARENT": "", "ABT_NUMMER": "_PB1", "NAME": "Production B1", "TREEPOS": "1" },	
+	{"ID": "32", "FK_STANDORT": "5", "FK_PARENT": "", "ABT_NUMMER": "_PB2", "NAME": "Production B2", "TREEPOS": "1" },	
+	{"ID": "33", "FK_STANDORT": "6", "FK_PARENT": "", "ABT_NUMMER": "_IT", "NAME": "IT", "TREEPOS": "1" },	
+	{"ID": "34", "FK_STANDORT": "6", "FK_PARENT": "", "ABT_NUMMER": "_RD", "NAME": "R/D", "TREEPOS": "1" },	
+	{"ID": "35", "FK_STANDORT": "6", "FK_PARENT": "", "ABT_NUMMER": "_LE", "NAME": "LEGAL", "TREEPOS": "1" },	
+	{"ID": "36", "FK_STANDORT": "6", "FK_PARENT": "35", "ABT_NUMMER": "_MA", "NAME": "M/A", "TREEPOS": "2" },
+	{"ID": "37", "FK_STANDORT": "6", "FK_PARENT": "35", "ABT_NUMMER": "_LG", "NAME": "LEGAL GENERAL", "TREEPOS": "2" }
+]
+
+
+
+
+
+[{ "ID" : "30", "FK_STANDORT" : "4", "FK_PARENT" : "null", "NAME" : "Production A", "ABT_NUMMER" : "_PA", "TREEPOS" : "1"},
+{ "ID" : "28", "FK_STANDORT" : "4", "FK_PARENT" : "null", "NAME" : "Real Estate", "ABT_NUMMER" : "_RE", "TREEPOS" : "1"},
+{ "ID" : "29", "FK_STANDORT" : "4", "FK_PARENT" : "null", "NAME" : "Sales", "ABT_NUMMER" : "_SA", "TREEPOS" : "1"}
+{ "ID" : "31", "FK_STANDORT" : "5", "FK_PARENT" : "null", "NAME" : "Production B1", "ABT_NUMMER" : "_PB1", "TREEPOS" : "1"}
+{ "ID" : "32", "FK_STANDORT" : "5", "FK_PARENT" : "null", "NAME" : "Production B2", "ABT_NUMMER" : "_PB2", "TREEPOS" : "1"}
+{ "ID" : "33", "FK_STANDORT" : "6", "FK_PARENT" : "null", "NAME" : "IT", "ABT_NUMMER" : "_IT", "TREEPOS" : "1"}
+{ "ID" : "35", "FK_STANDORT" : "6", "FK_PARENT" : "null", "NAME" : "LEGAL", "ABT_NUMMER" : "_LG", "TREEPOS" : "1"}
+{ "ID" : "37", "FK_STANDORT" : "6", "FK_PARENT" : "35", "NAME" : "LEGAL GENERAL", "ABT_NUMMER" : "_LG", "TREEPOS" : "2"}
+{ "ID" : "36", "FK_STANDORT" : "6", "FK_PARENT" : "35", "NAME" : "M/A", "ABT_NUMMER" : "_MA", "TREEPOS" : "2"}
+{ "ID" : "37", "FK_STANDORT" : "6", "FK_PARENT" : "null", "NAME" : "LEGAL GENERAL", "ABT_NUMMER" : "_LG", "TREEPOS" : "1"}
+{ "ID" : "36", "FK_STANDORT" : "6", "FK_PARENT" : "null", "NAME" : "M/A", "ABT_NUMMER" : "_MA", "TREEPOS" : "1"}
+{ "ID" : "34", "FK_STANDORT" : "6", "FK_PARENT" : "null", "NAME" : "R/D", "ABT_NUMMER" : "_RD", "TREEPOS" : "1"}]

@@ -1,0 +1,30 @@
+﻿<div >
+<form>
+	<div  class="top_ident_tr" ></div>
+	<table  style="align: center; width: 100%; vertical-align: middle">
+
+    	<tr > <td> &nbsp; </td></tr>
+		<tr >
+				<td style="width: 25%" ></td>
+				<td style="width: 50%; text-align: left" ng_controller="ToggleButton">
+					<img ng-mouseover="over(true)" ng-mouseout="over(false)" ng-click="selectionContext.clearSelection();masterContext.setCurrShownScreen(0);" ng-src="{{imageButtonUrl}}">
+					<span class="{{menuClass}}"> {{ 'BTN_NEW_SELECTION' | translate }} </span> 	
+				
+				</td>
+				<td style="width: 25%"></td>
+		</tr>				
+		<tr>
+				<td style="width: 40%"></td>
+				<td style="width: 50%; text-align: left" ng_controller="ToggleButton">
+					<img ng-mouseover="over(true)" ng-mouseout="over(false)" ng-focus="over(true)"  ng-blur="over(false)"
+							ng-click="masterContext.setCurrShownScreen(0);"ng-src="{{imageButtonUrl}}" >	
+					<span class="{{menuClass}}"> {{ 'BTN_CONTINUE' | translate }} </span> 	
+				
+				</td>
+				<td style="width: 10%"></td>
+		</tr>
+    	<tr  height="40%"> <td> &nbsp; </td></tr>
+				
+	</table>
+</form>
+</div>

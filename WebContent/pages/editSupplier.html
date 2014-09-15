@@ -1,0 +1,62 @@
+﻿<div >
+<form ng-controller="SupplierEditCtrl" name="SupplierForm">
+	<div  ></div>
+	<table  style="align: center; width: 100%; vertical-align: middle">
+
+    	<tr  height="40%"> <td> &nbsp; </td></tr>
+		<tr >
+				<td style="width: 15%" ></td>
+				<td style="width: 35%; text-align: left" >
+					<span class="input-item-label"> {{'LBL_KRED_NO' | translate}} </span> 	
+				</td>
+				<td style="width: 35%; text-align: left" >
+					<input  name="kred_id" type="text" class="input-item" ng-model="supplierEditContext.kred_id" 
+						required ng-maxlength="20"> 
+					<span class="error" ng-show="SupplierForm.kred_id.$error.required">{{'ERR_REQUIRED' | translate}}</span>
+					<span class="error" ng-show="SupplierForm.kred_id.$error.maxlength">{{'ERR_TOO_LONG' | translate}}</span>
+				</td>
+				<td style="width: 15%"></td>
+		</tr>	    	
+		<tr >
+				<td style="width: 15%" ></td>
+				<td style="width: 35%; text-align: left" >
+					<span class="input-item-label"> {{ 'LBL_FIRMA' | translate}} </span> 	
+				</td>
+				<td style="width: 35%; text-align: left" >
+					<input name="firma" type="text" class="input-item" ng-model="supplierEditContext.firma" required ng-maxlength="100">
+			 		<span class="error" ng-show="SupplierForm.firma.$error.required">{{'ERR_REQUIRED' | translate}}</span>
+					<span class="error" ng-show="SupplierForm.firma.$error.maxlength">{{'ERR_TOO_LONG' | translate}}</span>
+			
+				</td>
+				<td style="width: 15%"></td>
+		</tr>		
+		<tr  height="40%"> <td> &nbsp; </td></tr>		
+		<tr ng-show="SupplierForm.$valid">
+				<td style="width: 15%"></td>
+				<td colspan="2" style="width: 70%; text-align: left" ng_controller="ToggleButton">
+					<img ng-mouseover="over(true)" ng-mouseout="over(false)" 
+							   ng-click="supplierStorageService.store(supplierEditContext.getSupplier());supplierEditContext.clearSupplier();"
+							 ng-src="{{imageButtonUrl}}" >	
+					<span class="{{menuClass}}"> {{ 'BTN_SAVE' | translate }} </span> 	
+				<td style="width: 15%"></td>
+		</tr>
+		<tr>				
+				<td style="width: 15%"></td>
+				<td colspan="2" style="width: 70%; text-align: left" ng_controller="ToggleButton">
+					<img ng-mouseover="over(true)" ng-mouseout="over(false)" 
+							ng-click="navBack();" ng-src="{{imageButtonUrl}}" >	
+					<span class="{{menuClass}}"> {{'BTN_CANCEL' | translate }} </span> 	
+				
+				</td>
+				<td style="width: 15%"></td>
+				
+		</tr>
+    	<tr  height="40%"> <td> &nbsp; </td></tr>
+				
+	</table>
+</form>
+</div>
+
+<!--  <modal-dialog show='modalShown' width='750px' height='90%'>
+  <p>Modal Content Goes here<p>
+</modal-dialog>  -->

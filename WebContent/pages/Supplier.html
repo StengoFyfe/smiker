@@ -1,0 +1,31 @@
+﻿	 <ng-include src="'pages/tablepage.html'"></ng-include>
+	 
+	  <!-- Die Aktuelle Supplier-Tabelle -->
+	  <!--  -------------------------------------------------------------------- -->
+	  <div  ng-controller="MasterController"  class="div-tab-elem" >  
+	  <form class="inner_frame">
+	
+				    	<table class="table" ng-controller="SupplierCtrl">
+				     		 <tr class="standort_abt_header_tr">
+				      			<td colspan="2"  class="caption_sel_table">
+				      				<span>{{ 'TBL_HEADER_SUPPLIER' | translate}}</span>
+				      			</td>
+				      			<td>
+				      				<input type="image"  ng-src="{{masterContext.getImgProv().getImage('DEL_IMAGE')}}" ng-show="selectionContext.getSelSupplier() != null" ng-click="selectionContext.setSelSupplier(null);" />
+				      			</td>
+				      	
+				      		</tr>		    	
+				    		<tr ng-repeat="supplier in suppliers" class="list_cell">
+				    			
+				    			<td>{{supplier.ID}}</td>
+				    			<td>{{supplier.FIRMA}} [{{supplier.KRED_ID}}]</td>
+				    			<td >
+									<img ng_controller="ToggleButtonGeneric" class='selection_cell'
+				    				ng-src="{{imgBtnUrl('images/btnsel', 'gif')}}"
+				    				ng-mouseover="over(true)" ng-mouseout="over(false)"
+				    				ng-click="selectionContext.setSelSupplier(supplier);">
+				    			</td> 
+				    		</tr>
+				    	</table>
+		  </form>
+	  </div>
