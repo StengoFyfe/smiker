@@ -2,6 +2,7 @@
 var isSmallMode = false;
 var isLandscape = false;
 
+// Comment only for B1.0.0_Firsty
 function convertDateStringsToDates(input) {
     // Ignore things that aren't objects.
     if (typeof input !== "object") return input;
