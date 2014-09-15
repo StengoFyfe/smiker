@@ -1,4 +1,5 @@
-﻿app.factory('LoginWebService', function($rootScope, $http, $cookies, transformRequestAsFormPost, SaveBroadcaster, SessionContext ) {
+﻿// Comment only made in Branch B1.0.0.Firsty
+app.factory('LoginWebService', function($rootScope, $http, $cookies, transformRequestAsFormPost, SaveBroadcaster, SessionContext ) {
 	return { LoginWebService : function() {
 		
 		},
