@@ -2,6 +2,7 @@
 var isSmallMode = false;
 var isLandscape = false;
 
+// Comment done in V1.0.0_MasterBranch
 function convertDateStringsToDates(input) {
     // Ignore things that aren't objects.
     if (typeof input !== "object") return input;

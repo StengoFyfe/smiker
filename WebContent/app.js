@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-// Angular Stuff
+// Angular Stuff (only 1.0.0.Master)
 var app = angular.module('SpendTestApp', ['ngCookies', 'ngAnimate', 'ngRoute', 'ngSanitize', 'ngTouch', 'pascalprecht.translate', 'simplePagination', 'ui.bootstrap']);
 
 // /////////////////////////////////////////////////////////////////////////////////////////////////
