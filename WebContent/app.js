@@ -80,7 +80,8 @@ function guid () {
 	};
 	
 
-function TransientShortSet( ) {
+// Transient Set Implementation ... designed to have only few data (<100)	
+function TransientShortSet() {
 
 		this.theArray = new Array(10);
 		for( var i=0; i<10; i++)
