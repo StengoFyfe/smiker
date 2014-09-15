@@ -53,7 +53,8 @@ app.controller('ToggleButtonGeneric', function($scope, SelectionContext, MasterC
 
 });
       
-
+// Controller Class holding the MasterContext Singleton 
+// Addintionally there are some Events, that are handled here as well
 app.controller('MasterController', function($scope, MasterContext, SaveBroadcaster ){
 	    $scope.masterContext = MasterContext;
 	    $scope.reloadTrigger = MasterContext.getReloadTrigger;

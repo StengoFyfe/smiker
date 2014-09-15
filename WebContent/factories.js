@@ -1,6 +1,7 @@
 ﻿//Globals
 
    // Master Context
+   // Central Singleton for controlling the UI 
  app.factory('MasterContext', function($rootScope, $location, $translate, SaveBroadcaster) {
 	  var errorArr = new Array();
 	  var reloadTrigger = 0;
