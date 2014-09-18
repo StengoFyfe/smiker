@@ -12,7 +12,7 @@
 			
 			// this call is async... Wait for a response
 	       	  $http({method: 'POST', 
-	     		  	url: 'http://localhost:9580/WebServiceSpendTestService/rest/SpendTestServices/loginService/122',
+	     		  	url: 'http://'+location.host+'/WebServiceSpendTestService/rest/SpendTestServices/loginService/122',
 	                transformRequest: transformRequestAsFormPost,
 	     		  	headers:{
 			   		   'Accept': 'application/json;odata=verbose; charset=utf-8',
@@ -71,7 +71,7 @@ app.factory('StandortLoadService', function($rootScope, $http, SaveBroadcaster, 
 //		_initialized: false,
 		refresh: function() {
 	       	  $http({method: 'POST', 
-	     		  	url: 'http://localhost:9580/WebServiceSpendTestService/rest/SpendTestServices/standorte/129', 
+	     		  	url: 'http://'+location.host+'/WebServiceSpendTestService/rest/SpendTestServices/standorte/129', 
 	     		  	headers:{
 			   		   'Accept': 'application/json;odata=verbose; charset=utf-8',
 			   		   'Content-Type': 'application/json; charset=utf-8',
@@ -112,7 +112,7 @@ app.factory('AbteilungLoadService', function($rootScope, $http, SaveBroadcaster,
 
 
 	       	  $http({method: 'GET', 
-	     		  	url: 'http://localhost:9580/WebServiceSpendTestService/rest/SpendTestServices/abteilungen/129', 
+	     		  	url: 'http://'+location.host+'/WebServiceSpendTestService/rest/SpendTestServices/abteilungen/129', 
 	     		  	headers:{
 			   		   'Accept': 'application/json;odata=verbose; charset=utf-8',
 			   		   'Content-Type': 'application/json; charset=utf-8',
@@ -142,7 +142,7 @@ app.factory('MaterialgruppeLoadService', function($rootScope, $http, SaveBroadca
 		},
 		refresh: function() {
 	       	  $http({method: 'GET', 
-	     		  	url: 'http://localhost:9580/WebServiceSpendTestService/rest/SpendTestServices/materialgruppen/129', 
+	     		  	url: 'http://'+location.host+'/WebServiceSpendTestService/rest/SpendTestServices/materialgruppen/129', 
 	     		  	headers:{
 			   		   'Accept': 'application/json;odata=verbose; charset=utf-8',
 			   		   'Content-Type': 'application/json; charset=utf-8',
@@ -169,7 +169,7 @@ app.factory('SupplierLoadService', function($rootScope, $http, SaveBroadcaster, 
 		},
 		refresh: function() {
 	       	  $http({method: 'GET', 
-	     		  	url: 'http://localhost:9580/WebServiceSpendTestService/rest/SpendTestServices/supplier/129', 
+	     		  	url: 'http://'+location.host+'/WebServiceSpendTestService/rest/SpendTestServices/supplier/129', 
 	     		  	headers:{
 			   		   'Accept': 'application/json;odata=verbose; charset=utf-8',
 			   		   'Content-Type': 'application/json; charset=utf-8',
@@ -206,7 +206,7 @@ app.factory('SupplierStorageService', function($rootScope, $http, transformReque
 			
 			// this call is async... Wait for a response
 	       	  $http({method: 'POST', 
-	     		  	url: 'http://localhost:9580/WebServiceSpendTestService/rest/SpendTestServices/supplierStore/129',
+	     		  	url: 'http://'+location.host+'/WebServiceSpendTestService/rest/SpendTestServices/supplierStore/129',
 	                transformRequest: transformRequestAsFormPost,
 	     		  	headers:{
 			   		   'Accept': 'application/json;odata=verbose; charset=utf-8',
@@ -263,7 +263,7 @@ app.factory('UmsatzLoadService', function($rootScope, $http, SaveBroadcaster, Se
 	  	Appendix += SupplierIdx;
 			
 	       	  $http({method: 'GET', 
-	     		  	url: 'http://localhost:9580/WebServiceSpendTestService/rest/SpendTestServices/umsatz' + Appendix, 
+	     		  	url: 'http://'+location.host+'/WebServiceSpendTestService/rest/SpendTestServices/umsatz' + Appendix, 
 	     		  	headers:{
 			   		   'Accept': 'application/json;odata=verbose; charset=utf-8',
 			   		   'Content-Type': 'application/json; charset=utf-8',
