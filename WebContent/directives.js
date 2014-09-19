@@ -1,4 +1,5 @@
-﻿app.directive('headerhome', function(){
+﻿// defines the upmost banner including the home an the settings button
+app.directive('headerhome', function(){
   return {
     restrict: 'E',
     scope: {
@@ -23,6 +24,8 @@
 
   };
 });
+
+// i don't know, if this really works
 app.directive('modalDialog', function() {
 	  return {
 	    restrict: 'E',
