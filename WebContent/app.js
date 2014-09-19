@@ -34,6 +34,14 @@ function loginObj( user, pwd ) {
 // ///////////////////////////////////////////////////////////////////////////////////////////////////
 // custom Objects
 
+
+// Generic Stack-Object
+// This object is created with 2 values: MaxSize and BlockReallocSize
+// If MaxSize is reached, then the whole Stack will be truncated and moved down
+// by the amount of BlockReallocSize-Entries
+// --
+// This implementation cannot be used for reliable and 100% proof implemenations
+// ... its it designed for the usage within a breadcrumb-navigation... 
 function Stack( MaxSize, BlockReallocSize ) {
 
 	this.theArray = new Array(MaxSize);
@@ -67,6 +75,7 @@ function Stack( MaxSize, BlockReallocSize ) {
 	
 };
 
+// this object generates a random guid
 function guid () {
 	  function s4() {
 	    return Math.floor((1 + Math.random()) * 0x10000)
@@ -80,7 +89,10 @@ function guid () {
 	};
 	
 
+
 // Transient Set Implementation ... designed to have only few data (<100)	
+// The purpose for this class is having an easy to use storage with only few
+// items... that means less than 50 ... perhaps
 function TransientShortSet() {
 
 		this.theArray = new Array(10);
@@ -127,6 +139,9 @@ function TransientShortSet() {
 		
 	};
 	
+// image Provider Class.. deprecated
+// used for managing images in different formats...
+// This is better done using a style-sheet	
 function imgProvider( isSmallMode ) {
 		
 		
@@ -144,7 +159,7 @@ function imgProvider( isSmallMode ) {
 	};
 
 
-  
+  // non modal wait dlg implemenation
 	var ray={
 			ajax:function(st)
 				{

@@ -1,9 +1,10 @@
-﻿
+﻿// Selection Control... provides SelectionContext AND MasterContext
 app.controller('SelectionCtrl', function($scope, SelectionContext, MasterContext){
         $scope.selectionContext = SelectionContext;
         $scope.masterContext = MasterContext;
       });
 
+// ToggleButton Control... older Version of ToggleButtonGeneric, using the Images "BTN_PRESSED"
 app.controller('ToggleButton', function($scope, SelectionContext, MasterContext) {
 	$scope.selectionContext = SelectionContext;
 	$scope.masterContext = MasterContext;
@@ -27,6 +28,7 @@ app.controller('ToggleButton', function($scope, SelectionContext, MasterContext)
 
 });
 
+// ToggleButtonGeneric Controller ... Map the mouseOver Events to the function "over" and provide the image-base-info with "imgBtnurl"
 app.controller('ToggleButtonGeneric', function($scope, SelectionContext, MasterContext) {
 	$scope.selectionContext = SelectionContext;
 	$scope.masterContext = MasterContext;

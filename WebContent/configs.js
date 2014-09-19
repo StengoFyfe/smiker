@@ -2,7 +2,9 @@
 var isSmallMode = false;
 var isLandscape = false;
 
-// Comment done in V1.0.0_MasterBranch
+// This function gets an object or an object array
+// searches for data in the pattern of regexIso8601 and
+// converts this fields from text into a JavaScript DateObject
 function convertDateStringsToDates(input) {
     // Ignore things that aren't objects.
     if (typeof input !== "object") return input;
@@ -26,7 +28,7 @@ function convertDateStringsToDates(input) {
 }
 
 
-
+// Config our App-Routing
 app.config(function($routeProvider) {
   $routeProvider
   .when('/standortabteilung', { templateUrl: 'pages/Standort_Abteilung.html' })
@@ -42,6 +44,11 @@ app.config(function($routeProvider) {
 });
 
 
+// http provider
+// - Calls the function "convertDateStringsToDates" to convert JSon-Results from plain text
+//   Object-arrays to arrays containing real date objects
+// - Configures the interceptor "authHttpResponseInterceptor" for a unique behaviour, when the
+//    404 response occurs
 app.config(["$httpProvider", function ($httpProvider) {
     $httpProvider.defaults.transformResponse.push(function(responseData){
        convertDateStringsToDates(responseData);
@@ -126,6 +133,9 @@ function switchCSS() {
 	
 }
 
+
+// central onLoad functionality... 
+// ... I think ng-init can be used better...
 window.onload = function () {
 	// switch the CSS depending on the device
 	switchCSS();
